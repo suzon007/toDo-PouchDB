@@ -1,0 +1,169 @@
+*{
+  margin:0px;
+  padding: 0px;
+}
+body{
+  background-color: #334854;
+  color: #EFECEA;
+}
+.top h1{
+  text-align: center;
+  border-bottom: 2px solid;
+  padding: 20px;
+}
+.main-menu{
+  text-align: center;
+}
+.main-menu li{
+  list-style-type: none;
+  display: inline-block;
+
+}
+.main-menu button{
+  width: 200px;
+  height: 100px;
+  border-color: #334854;
+  background-color: #F9C535;
+  border-radius: 5px;
+  margin-top: 30px;
+  font-size: 24px;
+  color: #334854;
+
+}
+/*=============TABLE STYLE======================*/
+table th,
+table td{
+  text-align: left;
+}
+table.layout{
+  width: 100%;
+  border-collapse: collapse;
+}
+table.display{
+  margin: 1em 0;
+}
+table.display th,
+table.display td{
+  border: 1px solid 	 #577a8e;
+  padding: .5em 1em;
+}
+
+table.display th{ background:   #4e6d7e; }
+table.display td{ background: #fff; }
+
+table.responsive-table{
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+tbody{
+  color: #334854;
+}
+tbody a{
+  text-decoration: none;
+  color: #334854;
+}
+tbody a:hover{
+  text-decoration: none;
+  color: #E04462;
+}
+@media (max-width: 30em){
+    table.responsive-table{
+      box-shadow: none;
+    }
+    table.responsive-table thead{
+      display: none;
+    }
+  table.display th,
+  table.display td{
+    padding: .5em;
+  }
+
+  table.responsive-table td:nth-child(1):before{
+    content: 'Number';
+  }
+  table.responsive-table td:nth-child(2):before{
+    content: 'Name';
+  }
+  table.responsive-table td:nth-child(1),
+  table.responsive-table td:nth-child(2){
+    padding-left: 25%;
+  }
+  table.responsive-table td:nth-child(1):before,
+  table.responsive-table td:nth-child(2):before{
+    position: absolute;
+    left: .5em;
+    font-weight: bold;
+  }
+
+    table.responsive-table tr,
+    table.responsive-table td{
+        display: block;
+    }
+    table.responsive-table tr{
+        position: relative;
+        margin-bottom: 1em;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    }
+    table.responsive-table td{
+        border-top: none;
+    }
+    table.responsive-table td.organisationnumber{
+        background: #D5E0CC;
+        border-top: 1px solid #B3BFAA;
+    }
+    table.responsive-table td.actions{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        background: none;
+    }
+}
+/*=============ADD TODOS ================*/
+#addToDo{
+  visibility: hidden;
+}
+.addForm{
+  border-radius: 5px;
+  background-color: #EFECEA;
+  padding: 40px;
+  text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #F9C535;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#taskDesc{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#addToDo-header{
+  text-align: center;
+  margin-top: -60px;
+}
+#addToDo-header h1{
+  padding: 20px;
+}

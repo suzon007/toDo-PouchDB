@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2DOo</title>
+  <link rel="stylesheet" href="assets/main.css">
+  <script src="http://cdn.jsdelivr.net/pouchdb/5.3.2/pouchdb.min.js"></script>
+  <script src="source/todo.js"></script>
+  <script>
+  //=========HIDE AND SHOW CODE=========================================
+  function showHide(clicked_id){
+    // document.getElementById('addToDo').style.visibility = "hidden";
+    if(clicked_id === "btnAddToDo"){
+      document.getElementById('showToDo').style.visibility = "hidden";
+      document.getElementById('addToDo').style.visibility = "visible";
+    }
+    else if(clicked_id === "btnShowToDo"){
+      document.getElementById('addToDo').style.visibility = "hidden";
+      document.getElementById('showToDo').style.visibility = "visible";
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="top">
+    <h1>What are you going to do today?</h1>
+  </header>
+  <section>
+    <menu class="main-menu">
+      <li><button type="button" id="btnShowToDo" onclick="showHide(this.id)">
+        TODO LIST
+      </button></li>
+      <li><button type="button" id="btnAddToDo" onclick="showHide(this.id)">
+        ADD TASK
+      </button></li>
+      <li><button type="button" id="btnResetAll" >
+        RESET ALL
+      </button></li>
+
+    </menu>
+  </section>
+  <!--========================= SHOW toDo LIST =============================-->
+  <section id="showToDo" onload="viewnoteset()">
+    <table class="layout display responsive-table" id="todos">
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th >Tasks</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+      </tbody>
+    </table>
+  </section>
+  <!--========================= ADD NEW toDo LIST =============================-->
+  <section id="addToDo">
+    <header id="addToDo-header">
+      <h1>ADD TASKS</h1>
+    </header>
+    <section class="addForm">
+      <form class="" action="" method="" id="myForm">
+        <input type="text" name="taskNo" id="taskNo" value="" placeholder="Task ID">
+        <textarea name="taskDesc" rows="8" cols="40" id="taskDesc" placeholder="Descriptions"></textarea>
+        <input type="button" name="taskSubmit" value="Add It" onclick="savenote();">
+
+      </form>
+    </section>
+  </section>
+
+</body>
+</html>
