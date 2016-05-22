@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>2DOo</title>
   <link rel="stylesheet" href="assets/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <script src="http://cdn.jsdelivr.net/pouchdb/5.3.2/pouchdb.min.js"></script>
   <script src="source/todo.js"></script>
   <script>
@@ -21,7 +22,7 @@
   }
   </script>
 </head>
-<body>
+<body onload="showText()">
   <header class="top">
     <h1>What are you going to do today?</h1>
   </header>
@@ -33,7 +34,7 @@
       <li><button type="button" id="btnAddToDo" onclick="showHide(this.id)">
         ADD TASK
       </button></li>
-      <li><button type="button" id="btnResetAll" >
+      <li><button type="button" id="btnResetAll" onclick="reset()">
         RESET ALL
       </button></li>
 
@@ -50,6 +51,11 @@
         </tr>
       </thead>
       <tbody id="table-body">
+        <tr>
+        <td>Number</td>
+        <td>Tasks</td>
+        <td>Actions</td>
+      </tr>
       </tbody>
     </table>
   </section>
@@ -62,7 +68,7 @@
       <form class="" action="" method="" id="myForm">
         <input type="text" name="taskNo" id="taskNo" value="" placeholder="Task ID">
         <textarea name="taskDesc" rows="8" cols="40" id="taskDesc" placeholder="Descriptions"></textarea>
-        <input type="button" name="taskSubmit" value="Add It" onclick="savenote();">
+        <input type="button" name="taskSubmit" value="Add It" onclick="savenote();" >
 
       </form>
     </section>

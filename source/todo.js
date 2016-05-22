@@ -20,20 +20,33 @@ savenote = function(){
   });
 }
 
-viewnoteset = function(){
-  var df = document.createDocumentFragment(),
-      options = {},
-      nl = document.getElementById('table-body');
-  options.include_docs = true;
+//============================SHOW TASKS======================================
+var showText = function(){
 
-  this.pbd.allDocs(options, function(error, response){
-    row = response.rows.map(addrow);
-    row.map(function(f){
-      if (f) {
-        df.appendChild(f);
-      }
-    });
-    nl. appendChild(df);
-
+  pdb.allDocs({include_docs: true}, function(err, res){
+    if (!err) {
+      console.log("This is working!");
+      let tableRow = "";
+      res.rows.forEach(function(element){
+        tableRow +='<tr>'+
+                    '<td>' + element.doc.taskNo + '</td>'+
+                    '<td>' + element.doc.taskDesc + '</td>'+
+                    '<td>' + '<a href="#" onclick(doneThis();)> <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i></a> | <a href="#"> <i class="fa fa-pencil-square-o  fa-2x" aria-hidden="true"></i> </a>' + '</td>'+
+                  '</tr>';
+      });
+      document.getElementById('table-body').innerHTML = tableRow;
+    }
   });
-};
+}
+//============================DONE THE WORK NOTIFIER==========================
+var doneThis = function(){
+    console.log("Working!");
+}
+//=============================RESET==========================================
+var reset = function(){
+  new PouchDB('pouchnotes').destroy().then(function () {
+    alert('RESETED!');
+  }).catch(function (err) {
+    console.log(err);
+  })
+}
